@@ -676,9 +676,13 @@ function renderRoutines() {
   if(!db.routines.length){el.innerHTML=`<div class="empty"><div class="empty-icon">📋</div><p>No routines yet.</p></div>`;return;}
   el.innerHTML=db.routines.map(r=>`
     <div class="card">
-      <div class="card-header" onclick="toggleCard('r-${r.id}')">
-        <div class="card-title">${r.name} <span class="time-badge" style="font-size:11px;padding:3px 10px">${estimateTime(r.exercises,r.sets)}</span></div>
-        <span class="chevron" id="chev-r-${r.id}">▼</span>
+      <div class="card-header">
+        <div class="card-title" onclick="toggleCard('r-${r.id}')" style="flex:1;cursor:pointer">${r.name} <span class="time-badge" style="font-size:11px;padding:3px 10px">${estimateTime(r.exercises,r.sets)}</span></div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <button class="btn btn-ghost btn-sm" onclick="openEditRoutineMeta('${r.id}')">Edit</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteRoutinePrompt('${r.id}')">Delete</button>
+          <span class="chevron" id="chev-r-${r.id}" onclick="toggleCard('r-${r.id}')" style="cursor:pointer;padding:4px">▼</span>
+        </div>
       </div>
       <div class="card-body" id="r-${r.id}">
         <div class="routine-meta">
@@ -696,8 +700,6 @@ function renderRoutines() {
           </div>`;}).join('')}
         <div class="actions-row" style="margin-top:14px">
           <button class="btn btn-ghost btn-sm" onclick="loadRoutineIntoBuilder('${r.id}')">Edit in Builder</button>
-          <button class="btn btn-ghost btn-sm" onclick="openEditRoutineMeta('${r.id}')">Edit Details</button>
-          <button class="btn btn-danger btn-sm" onclick="deleteRoutinePrompt('${r.id}')">Delete</button>
         </div>
       </div>
     </div>`).join('');
