@@ -397,6 +397,8 @@ const seedExercises = [
   { id:'e27', name:'Chest flies', primary:'Chest', secondary:'Shoulders', category:'Chest', weight:'2x10 lbs', notes:'6 each side.' },
   { id:'e28', name:'Bent over row', primary:'Back', secondary:'Biceps, Core', category:'Back', weight:'2x10 lbs', notes:'8 both arms.' },
   { id:'e29', name:'Bow and arrow row', primary:'Back', secondary:'Biceps, Shoulders', category:'Back', weight:'2x10 lbs', notes:'' },
+  { id:'e30', name:'Single leg RDL to arm pull', primary:'Hamstrings', secondary:'Back, Shoulders, Glutes', category:'Compound', weight:'1x20 lb', notes:'Pulsing at bottom. Hinge on single leg, row at bottom. Contralateral: DB in opposite hand from standing leg.' },
+  { id:'e31', name:'Sumo side sweep', primary:'Inner thigh', secondary:'Glutes', category:'Legs', weight:'1x20 lb', notes:'Wide sumo stance, toes out. Shift weight side to side, sweep foot along floor. Stay low throughout. Both hands on DB or one centered.' },
 ];
 
 const seedRoutines = [
@@ -406,8 +408,15 @@ const seedRoutines = [
   { id:'r2', name:'Arm Blast', sets:3, vest:'20 lb vest', notes:'Arms circuit. Completed May 29.',
     exercises:[{exerciseId:'e14',reps:8,notes:'Both arms'},{exerciseId:'e15',reps:8,notes:'Both arms'},{exerciseId:'e20',reps:6,notes:'Each side'},{exerciseId:'e27',reps:6,notes:'Each side'},{exerciseId:'e21',reps:8,notes:'Each side'},{exerciseId:'e28',reps:8,notes:'Both arms'}]
   },
-  { id:'r4', name:'Leg Complex Pro', sets:3, vest:'20 lb vest', notes:'Upgraded leg complex. 1x20 lb DB + 20 lb vest. Stronger hamstring and glute focus.',
-    exercises:[{exerciseId:'e1',reps:5,notes:'Pulsing'},{exerciseId:'e11',reps:4,notes:'Pulsing'},{exerciseId:'e9',reps:3,notes:'Pulsing, each side'},{exerciseId:'e4',reps:2,notes:'Single leg, back to back'},{exerciseId:'e5',reps:1,notes:'5 pulses'},{exerciseId:'e13',reps:8,notes:'Pulsing, both hands'}]
+  { id:'r4', name:'Leg Complex Pro', sets:3, vest:'20 lb vest', notes:'Upgraded leg complex. 1x20 lb DB + 20 lb vest. Posterior chain focus -- hamstrings, glutes, inner thigh. Pulse all moves. Contralateral loading: DB in opposite hand from standing leg.',
+    exercises:[
+      {exerciseId:'e30', reps:5, notes:'Pulsing at bottom, each side. Standing leg right, DB left hand -- then switch.'},
+      {exerciseId:'e3',  reps:4, notes:'Pulsing, forward lean, drive through glute. Standing leg right, DB left hand -- then switch.'},
+      {exerciseId:'e9',  reps:3, notes:'Pulsing, each side. Lunge leg right, DB left hand -- then switch.'},
+      {exerciseId:'e6',  reps:2, notes:'Pulsing, single leg. Standing leg right, DB left hand -- then switch.'},
+      {exerciseId:'e31', reps:5, notes:'Stay low, sweep side to side. Both hands on DB.'},
+      {exerciseId:'e13', reps:8, notes:'Pulsing, both hands.'}
+    ]
   },
   { id:'r3', name:'Lateral Legs', sets:3, vest:'20 lb vest', notes:'Variety leg session. Lateral and rotational focus.',
     exercises:[{exerciseId:'e6',reps:8,notes:'Each side'},{exerciseId:'e7',reps:8,notes:'Each side'},{exerciseId:'e9',reps:8,notes:'Each side'},{exerciseId:'e8',reps:8,notes:'Each side, 1x5 lb KB'},{exerciseId:'e26',reps:8,notes:'Each side, no vest'}]
